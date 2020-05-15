@@ -14,7 +14,11 @@ app.use(logger("dev"));
 
 global.__basedir = __dirname
 
-app.get("/", (req, res) => { 
+app.get("/", (req, res) => {
+  console.log('hello I am ok, with manual')
+    shell.cd('../Price-Comparison');
+    shell.exec('git pull origin master')
+    shell.exec('npm i') 
     res.json({
       key: "I am value"
     });
